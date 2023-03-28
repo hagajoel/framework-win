@@ -2,13 +2,16 @@ package etu1930.framework.servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.HashMap;
 
+import etu1930.framework.Mapping;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 public class FrontServlet extends HttpServlet{
+    HashMap<String, Mapping> urlMapping;
     protected void processRequest(HttpServletRequest req, HttpServletResponse rep) {
         rep.setContentType("text/plain");
         try (PrintWriter out = rep.getWriter()){
